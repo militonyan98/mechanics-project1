@@ -1,0 +1,106 @@
+<head>
+
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript" src="main.compiled.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh">
+    <script src="bootstrap/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class='mx-auto' style="text-align: center;">
+                    <h2>Car</h2>
+                </div>
+
+            </div>
+            <div class="col-sm">
+                <div class='mx-auto' style="text-align: center;">
+                    <h2>Intersection</h2>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class='mx-auto' style="text-align: center;">
+                    <h2>Other</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input id='car1InitialSpeed' type="number" placeholder="Initial Speed" />
+            </div>
+            <div class="col-sm">
+                <input id='intersectionWidth' type="number" placeholder="Width" />
+            </div>
+            <div class="col-sm">
+                <input id='distanceToIntersection' type="number" placeholder="Distance to Intersection" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input id='car1Acceleration' type="number" placeholder="Acceleration" />
+            </div>
+            <div class="col-sm">
+                <input id='yellowLightTime' type="number" placeholder="Yellow light time" />
+            </div>
+            <div class="col-sm">
+                <button onclick="findSolution(Number(car1InitialSpeed.value), Number(car1Acceleration.value), Number(car1Deceleration.value), Number(car1VMax.value), Number(intersectionWidth.value), Number(yellowLightTime.value), Number(distanceToIntersection.value), false)"
+                    id='calculate' class="btn-success">Calculate</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <input id='car1Deceleration' type="number" placeholder="Deceleration" />
+            </div>
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm">
+                <button onclick="findSolution(Number(car1InitialSpeed.value), Number(car1Acceleration.value), Number(car1Deceleration.value), Number(car1VMax.value), Number(intersectionWidth.value), Number(yellowLightTime.value), Number(distanceToIntersection.value), true)"
+                    id='calculateWithVMax' class="btn-success">Calculate with V Max</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm">
+                <input id='car1VMax' type="number" placeholder="V Max" />
+            </div>
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class='mx-auto'>
+                    <h2 id='Result' style="text-align: center;">Result 1</h2>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class="col-sm">
+                <input id='car2InitialSpeed' type="number" placeholder="Car 2 Initial Speed" />
+            </div>
+            <div class="col-sm">
+                <input id='car2Acceleration' type="number" placeholder="Car 2 Acceleration" />
+            </div>
+            <div class="col-sm">
+                <input id='car2Deceleration' type="number" placeholder="Car 2 Deceleration" />
+            </div>
+            <div class="col-sm">
+                <input id='distanceBetween' type="number" placeholder="Distance To First" />
+            </div>
+        </div>
+        <div class='row'>
+            <div class="col">
+                <button onclick="findSolution2Cars(Number(car1InitialSpeed.value), Number(car1Acceleration.value), Number(car1Deceleration.value),Number(car2InitialSpeed.value), Number(car2Acceleration.value), Number(car2Deceleration.value), Number(intersectionWidth.value), Number(yellowLightTime.value), Number(distanceToIntersection.value), Number(distanceBetween.value))"
+                    id='calculate' class="btn-success">Calculate with 2 Cars</button>
+            </div>
+        </div>
+    </div>
+</body>
